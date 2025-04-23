@@ -1,0 +1,22 @@
+
+
+DEPOSIT
+# scripts for separating out public inputs / proof, some needed reformating of public inputs I did manually
+echo "[\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{8\}//' | cut -c1-256)\"]"
+echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{264\}//')\""
+
+Deployed contract: 0x2ece02e59b6f315f94552b443b53c5608eada905
+https://sepolia.etherscan.io/address/0x2ece02e59b6f315f94552b443b53c5608eada905
+
+Screenshot of interaction with contract in ./deposit_interaction.png
+
+
+WITHDRAW
+# scripts for separating out public inputs / proof, some needed reformating of public inputs I did manually
+echo "[\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{8\}//' | cut -c1-128)\"]"
+echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{136\}//')\""
+
+Deployed contract: 0x3e8edb92a3dede1806db1838ef234af2fc57d499
+https://sepolia.etherscan.io/address/0x3e8edb92a3dede1806db1838ef234af2fc57d499
+
+Screenshot of interaction with contract in ./withdraw_interaction.png
