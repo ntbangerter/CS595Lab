@@ -14,7 +14,8 @@ fn main(
     let validateNewRoot = compute_merkle_root(commitment, index, oldPath);
     assert(newRoot == validateNewRoot);
 
-    let validatePath = compute_merkle_root(0x18d85f3de6dcd78b6ffbf5d8374433a5528d8e3bf2100df0b7bb43a4c59ebd63, index, oldPath);
+    let emptyLeaf = 0x18d85f3de6dcd78b6ffbf5d8374433a5528d8e3bf2100df0b7bb43a4c59ebd63;
+    let validatePath = compute_merkle_root(emptyLeaf, index, oldPath);
     assert(oldRoot == validatePath);
 
 }
